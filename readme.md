@@ -10,3 +10,4 @@
 1. Implement "watch" in both client and server
 2. Handle error (optional)
 3. ...
+test
