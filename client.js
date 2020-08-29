@@ -31,11 +31,9 @@ function deleteBook(id) {
         .catch((error) => {console.log(error); return;})
 }
 
-function watchBooks() {
-    var call = client.watch({});
-    call.on('data', function(book) {
-        console.log(book);
-    });
+// TODO: Implement 'watchBook()'
+function watchBook() {
+    console.log('TODO');
 }
 
 var processName = process.argv.shift();
