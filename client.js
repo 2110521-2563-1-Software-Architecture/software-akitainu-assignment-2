@@ -1,6 +1,7 @@
 // CLIENT
 
 const axios = require('axios');
+const io = require('socket.io-client');
 
 function listBooks() {
     axios.get('http://localhost:10000/books')
@@ -31,9 +32,12 @@ function deleteBook(id) {
         .catch((error) => {console.log(error); return;})
 }
 
-// TODO: Implement 'watchBook()'
-function watchBook() {
-    console.log('TODO');
+function watchBooks() {
+    const socket = io('http://localhost:10001/');
+    socket.emit("watch");
+    socket.on("respond", (msg) => {
+        console.log(msg);
+    });
 }
 
 var processName = process.argv.shift();

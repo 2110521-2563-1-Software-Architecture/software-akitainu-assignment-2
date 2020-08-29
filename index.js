@@ -1,7 +1,13 @@
 // SERVER
 
 const express = require('express');
- 
+const io = require('socket.io');
+const internalIO = require('socket.io-client');
+const socket = internalIO('http://localhost:10002/');
+
+const serverIO = io.listen(10002);
+const clientIO = io.listen(10001);
+
 var books = [{
     id: 123,
     title: 'A Tale of Two Cities',
@@ -34,6 +40,7 @@ app.post('/books', (req, res) => {
             return res.send('Duplicated id');
         }
     }
+    socket.emit("new-books", book);
     books.push(book);
     res.status(200);
     return res.send({});
@@ -59,15 +66,16 @@ app.delete('/books/:id', (req, res) => {
     return res.send({});
 });
 
-app.delete('/books/:id', (req, res) => {
-    const id = req.params.id;
-    updateBooks = books.filter((book) => book.id !== parseInt(id));
-    books = updateBooks;
-    res.status(200);
-    return res.send({});
+serverIO.on('connection', (serverSocket) => {
+    clientIO.on('connection', (clientSocket) => {
+        clientSocket.on("watch", () => {
+            serverSocket.on("new-books", (book) => {
+                clientSocket.emit("respond", "Server stream data received:" + JSON.stringify(book));
+            });
+        });
+    });
 });
 
-// TODO: Implement 'watch'
 
 app.listen(10000, () =>
     console.log(`Listening on port 10000!`),
