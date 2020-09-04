@@ -1,6 +1,6 @@
 # Assignment #1: gRPC and REST API Implementation
 
-## Group member: Sofware Akitainu
+## Group member: Software Akitainu
 1. 6030249621 Mr. Thanapat Sanguansab
 2. 6030264021 Mr. Tanakorn Tampanya
 3. 6031054721 Mr. Watcharit Tuntayakul
