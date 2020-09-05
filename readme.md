@@ -43,3 +43,4 @@ TODO
 | Watch books |  |  |
 
 ### Component diagram representing the book services with and without interfaces
+![](component_diagrams.png?raw=true)
