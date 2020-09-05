@@ -24,11 +24,11 @@
 ### How to call the methods based on gRPC and REST API side-by-side
 | Functions | gRPC | REST API |
 |--|--|--|
-| List books | client.list({},function(error,books)) |axios.get('http://localhost:10000/books')  |
-| Insert books | client.insert(book,function(error,empty)) | axios.post('http://localhost:10000/books', book) |
-| Get books | client.get({id},function(error,book)) | axios.get(`http://localhost:1000/books/${id}`, book) |
-| Delete books | client.delete({id},function(error,empty)) | axios.delete(`http://localhost:10000/books/${id}`) |
-| Watch books | cliet.watch({}) | socket.on("respond",function(msg)) |
+| List books | client.list({}, function(error, books) {<br>&nbsp;&nbsp;printResponse(error, books);<br>}); | `axios.get('http://localhost:10000/books')`  |
+| Insert books | client.insert(book, function(error, empty) {<br>&nbsp;&nbsp;printResponse(error, empty);<br>}); | `axios.post('http://localhost:10000/books', book)` |
+| Get books | client.get({ id: parseInt(id) }, function(error, book) {<br>&nbsp;&nbsp;printResponse(error, book);<br>}); | ```axios.get(`http://localhost:1000/books/${id}`, book)``` |
+| Delete books | client.delete({ id: parseInt(id) }, function(error, empty) {<br>&nbsp;&nbsp;printResponse(error, empty);<br>}); | ```axios.delete(`http://localhost:10000/books/${id}`)``` |
+| Watch books | cliet.watch({}) | `socket.on("respond",function(msg))` |
 
 ### Differences between REST API and gRPC
 REST API and gRPC have major differences in protocol and transmission format. GRPC is developed using https2.0 transmission, which has header compression and supports continuous transmission within one tcp connection compared to the rest API that uses http1, gRPC has also been modified transmission format to protobuf, which supports specifying variable types and variables that require / optional and object schema compared to the object json the REST API uses without this capability, and from the above reason gRPC can do higher speed in a smaller size of data package. But it's not as widespread as the rest API.
