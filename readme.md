@@ -36,11 +36,11 @@ TODO
 TODO
 | Functions | gRPC | REST API |
 |--|--|--|
-| List books |  |  |
-| Insert books |  |  |
-| Get books |  |  |
-| Delete books |  |  |
-| Watch books |  |  |
+| List books | listBooks(); |  listBooks(); |
+| Insert books |insertBook(int id, str title, str author);  | insertBook(id,title, author); |
+| Get books | getBook(int id); |  getBook(id);|
+| Delete books | deleteBook(int id); | deleteBook(id); |
+| Watch books | watchBooks(); | watchBooks(); |
 
 ### Component diagram representing the book services with and without interfaces
 ![](component_diagrams.png?raw=true)
