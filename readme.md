@@ -17,7 +17,6 @@
 [/rest/client.js](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-1/blob/master/rest/server.js)
 
 ### How to call the methods based on gRPC and REST API side-by-side
-TODO
 | Functions | gRPC | REST API |
 |--|--|--|
 | List books | client.list({},function(error,books)) |axios.get('http://localhost:10000/books')  |
@@ -30,10 +29,11 @@ TODO
 For REST API, clients use format type JSON ,but gRPC use protobuf  which is strict in variable typeThe REST API and gRPC have major differences in protocol and transmission format. GRPC is developed using https2.0 transmission, which has header compression and supports continuous transmission within one tcp connection compared to the rest API that uses http1, gRPC has also been modified transmission format to protobuf, which supports specifying variable types and variables that require / optional and object schema compared to the object json the REST API uses without this capability, and from the above reason gRPC can do higher speed in a smaller size of data package. But it's not as widespread as the rest API.
 
 ### Benefits of introducing interfaces in front of the gRPC and REST API of the book services
-TODO
+- Making the code easier to understand 
+- User must know only what to use (function parameters) and what to get (function response)
+
 
 ### How to call the methods based on gRPC and REST API side-by-side (after inroduced interface)
-TODO
 | Functions | gRPC | REST API |
 |--|--|--|
 | List books | listBooks(); |  listBooks(); |
