@@ -9,6 +9,11 @@
 
 ### Screenshots of Swagger for your APIs
 ![](swagger.PNG?raw=true)
+![](list.PNG?raw=true)
+![](insert.PNG?raw=true)
+![](get.PNG?raw=true)
+![](delete.PNG?raw=true)
+![](watch.PNG?raw=true)
 
 ### Source codes of REST API's server
 [/rest/server.js](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-1/blob/master/rest/server.js)
