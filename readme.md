@@ -20,14 +20,11 @@ TODO
 TODO
 | Functions | gRPC | REST API |
 |--|--|--|
-| List books | client.list({}, function(error, books) {
-    printResponse(error, books);
-  });
- |axios.get('http://localhost:10000/books')  |
-| Insert books |  | axios.post('http://localhost:10000/books', book) |
-| Get books |  | axios.get(`http://localhost:1000/books/${id}`, book) |
-| Delete books |  | axios.delete(`http://localhost:10000/books/${id}`) |
-| Watch books |  |  |
+| List books | client.list({},function(error,books)) |axios.get('http://localhost:10000/books')  |
+| Insert books | client.insert(book,function(error,empty)) | axios.post('http://localhost:10000/books', book) |
+| Get books | client.get({id},function(error,book)) | axios.get(`http://localhost:1000/books/${id}`, book) |
+| Delete books | client.delete({id},function(error,empty)) | axios.delete(`http://localhost:10000/books/${id}`) |
+| Watch books | cliet.watch({}) | socket.on("respond",function(msg)) |
 
 ### Differences between REST API and gRPC
 TODO
