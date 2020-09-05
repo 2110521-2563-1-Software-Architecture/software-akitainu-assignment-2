@@ -8,7 +8,7 @@
 5. 6031310321 Mr. Dolwijit Jiradilok
 
 ### Screenshots of Swagger for your APIs
-TODO
+![](swagger.PNG?raw=true)
 
 ### Source codes of REST API's server
 [/rest/server.js](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-1/blob/master/rest/server.js)
