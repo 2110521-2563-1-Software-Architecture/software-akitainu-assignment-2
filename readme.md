@@ -41,3 +41,5 @@ TODO
 | Get books |  |  |
 | Delete books |  |  |
 | Watch books |  |  |
+
+### Component diagram representing the book services with and without interfaces
