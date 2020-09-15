@@ -9,10 +9,13 @@ function printError(error) {
 }
 
 function listBooks() {
+  const startTime = new Date();
   axios
     .get("http://localhost:10000/books")
     .then((response) => {
+      const finishTime = new Date();
       console.log(response.data);
+      console.log("Time elapse:", finishTime - startTime);
       return;
     })
     .catch((error) => printError(error));
@@ -24,30 +27,39 @@ function insertBook(id, title, author) {
     title: title,
     author: author,
   };
+  const startTime = new Date();
   axios
     .post("http://localhost:10000/books", book)
     .then((response) => {
+      const finishTime = new Date();
       console.log(response.data);
+      console.log("Time elapse:", finishTime - startTime);
       return;
     })
     .catch((error) => printError(error));
 }
 
 function getBook(id) {
+  const startTime = new Date();
   axios
     .get(`http://localhost:10000/books/${id}`)
     .then((response) => {
+      const finishTime = new Date();
       console.log(response.data);
+      console.log("Time elapse:", finishTime - startTime);
       return;
     })
     .catch((error) => printError(error));
 }
 
 function deleteBook(id) {
+  const startTime = new Date();
   axios
     .delete(`http://localhost:10000/books/${id}`)
     .then((response) => {
+      const finishTime = new Date();
       console.log(response.data);
+      console.log("Time elapse:", finishTime - startTime);
       return;
     })
     .catch((error) => printError(error));
