@@ -6,3 +6,5 @@
   - ```node client.js get "id"``` : get book by id
   - ```node client.js delete "id"``` : delete book by id
   - ```node client.js watch``` : watch (for insert)
+### 3. test_scenario_a.js usage
+  - ```node test_scenario_a.js "service"``` : run that service 500 times
