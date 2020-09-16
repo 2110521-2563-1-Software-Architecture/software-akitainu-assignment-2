@@ -20,14 +20,29 @@
 ![](scenarioA_delete.png?raw=true)  
 &nbsp;&nbsp;&nbsp;&nbsp;From the graphs, the number of books in the server does not affect performance (probably 500 is not that much) while performance drop might come from other uncontrolled factors. For overall performance, gPRC is faster than REST API in every service except list service which gPRC and REST API have around the same performance (there are 500 books every time we use 'list' service, so, the performance difference is not from the number of books)  
   
+**Benchmark & code for scenario A:**  
+  
+&nbsp;&nbsp;&nbsp;&nbsp;We used command line to make request to the services, and get response time from stdout (implemented in client.js) from the command line. To replicate the experiment, cd to /rest or /grpc and use command ```node test_scenario_a.js <service>``` (service is insert, list, get, or delete)   
+- For gRPC: [/grpc/test_scenario_a.js](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-2/blob/master/grpc/test_scenario_a.js)  
+- For REST API: [/rest/test_scenario_a.js](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-2/blob/master/rest/test_scenario_a.js)  
+  
 **2. Scenario B:** Multiple clients with different kind of calls  
   
 &nbsp;&nbsp;&nbsp;&nbsp;As random service results in varied runtime, this experiment called random 1000 services (both gRPC and REST API) 3 times and then plot average time (ms) with the number of called services.  
 ![](scenarioB.png?raw=true)  
+**Benchmark & code for scenario B:**  
+  
+&nbsp;&nbsp;&nbsp;&nbsp;We used command line to make request to the services, and get response time from stdout (implemented in client.js) from the command line. To replicate the experiment, cd to /rest or /grpc and use command ```node test_scenario_b.js```   
+- For gRPC: [/grpc/test_scenario_b.js](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-2/blob/master/grpc/test_scenario_b.js)  
+- For REST API: [/rest/test_scenario_b.js](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-2/blob/master/rest/test_scenario_b.js)  
   
 **3. Scenario C:** Vary the number of concurrent calls from 1 to 4096 calls  
   
-&nbsp;&nbsp;&nbsp;&nbsp;TODO
+&nbsp;&nbsp;&nbsp;&nbsp;TODO  
+  
+**Benchmark & code for scenario C:**  
+  
+&nbsp;&nbsp;&nbsp;&nbsp;TODO  
 
 ### Discussion of the results why one method is better than the other in which scenarios
 
