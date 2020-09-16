@@ -38,21 +38,18 @@
   
 **3. Scenario C:** Vary the number of concurrent calls from 1 to 4096 calls  
   
-&nbsp;&nbsp;&nbsp;&nbsp;For this experiment, we create concurrent call increased by exponential of 2 ex.0,1,2,4,8,...,4096. For gRPC, the maximum concurrent call that can be received is 2048 calls (actually maybe 3000 calls) and for rest, this method can receive all 4096 calls. The graph that is shown below plot by exponential of 2 for axis x.
-
+&nbsp;&nbsp;&nbsp;&nbsp;For this experiment, we created concurrent call increased by exponential of 2, e.g. 1,2,4,8,...,4096. For gRPC, the maximum concurrent call that can be received is 2048 calls (actually maybe 3000 calls) and for REST API, it can receive all 4096 concurent calls. The graph that is shown below plot by exponential of 2 for axis x.  
 ![](scenarioC_insert.png?raw=true)
 ![](scenarioC_list.png?raw=true)
 ![](scenarioC_get.png?raw=true)
-![](scenarioC_delete.png?raw=true)
-
-&nbsp;&nbsp;&nbsp;&nbsp;From the graph, gRPC seems to perform better for all case until 4096 calls that gRPC cannot get all of request but for REST API, it can get all of it. So, the performance of gRPC in this scenario is better than REST API if the request is under the maximum concurrent calls that gRPC can be received.
- 
+![](scenarioC_delete.png?raw=true)  
+&nbsp;&nbsp;&nbsp;&nbsp;From the graphs, gRPC seems to perform better for all case except 4096 concurent calls that gRPC cannot response to all request but for REST API, it can response to all of them. So, the performance of gRPC in this scenario is better than REST API if the request is under the maximum concurrent calls that gRPC can be received.  
+  
 **Benchmark & code for scenario C:**  
   
 &nbsp;&nbsp;&nbsp;&nbsp;We use for to create concurrent call for REST and gRPC. To replicate the experiment, cd to /rest or /grpc and use command node test_scenario_c.js or go run test_scenario_c.go <service> (service is insert, list, get, or delete)
 - For gRPC: [/grpc/test_scenario_c.go](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-2/blob/master/grpc/test_scenario_c.go)  
 - For REST API: [/rest/test_scenario_c.js](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-2/blob/master/rest/test_scenario_c.js)  
-
 
 ### Discussion of the results why one method is better than the other in which scenarios
 
