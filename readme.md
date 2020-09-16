@@ -43,7 +43,8 @@
 ![](scenarioC_list.png?raw=true)
 ![](scenarioC_get.png?raw=true)
 ![](scenarioC_delete.png?raw=true)
-  
+&nbsp;&nbsp;&nbsp;&nbsp;Fron the graph, gRPC seems to perform better for all case until 4096 calls that gRPC cannot get all of request but for REST API, it can get all of it. So, the performance of gRPC in this scenario is better than REST API if the request is under the maximum concurrent calls that gRPC can be received.
+ 
 **Benchmark & code for scenario C:**  
   
 &nbsp;&nbsp;&nbsp;&nbsp;We use for to create concurrent call for REST and gRPC. To replicate the experiment, cd to /rest or /grpc and use command node test_scenario_c.js or go run test_scenario_c.go <service> (service is insert, list, get, or delete)
