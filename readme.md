@@ -46,8 +46,8 @@
   
 **Benchmark & code for scenario C:**  
   
-&nbsp;&nbsp;&nbsp;&nbsp;We use for to create concurrent call for REST and gRPC. To replicate the experiment, cd to /rest or /grpc and use command node test_scenario_c.js <service> (service is insert, list, get, or delete)
-- For gRPC: [/grpc/test_scenario_c.js](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-2/blob/master/grpc/test_scenario_c.js)  
+&nbsp;&nbsp;&nbsp;&nbsp;We use for to create concurrent call for REST and gRPC. To replicate the experiment, cd to /rest or /grpc and use command node test_scenario_c.js or go run test_scenario_c.go <service> (service is insert, list, get, or delete)
+- For gRPC: [/grpc/test_scenario_c.go](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-2/blob/master/grpc/test_scenario_c.go)  
 - For REST API: [/rest/test_scenario_c.js](https://github.com/2110521-2563-1-Software-Architecture/software-akitainu-assignment-2/blob/master/rest/test_scenario_c.js)  
 
 
