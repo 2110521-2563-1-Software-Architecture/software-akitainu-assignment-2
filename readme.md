@@ -39,11 +39,13 @@
 **3. Scenario C:** Vary the number of concurrent calls from 1 to 4096 calls  
   
 &nbsp;&nbsp;&nbsp;&nbsp;For this experiment, we create concurrent call increased by exponential of 2 ex.0,1,2,4,8,...,4096. For gRPC, the maximum concurrent call that can be received is 2048 calls (actually maybe 3000 calls) and for rest, this method can receive all 4096 calls. The graph that is shown below plot by exponential of 2 for axis x.
+
 ![](scenarioC_insert.png?raw=true)
 ![](scenarioC_list.png?raw=true)
 ![](scenarioC_get.png?raw=true)
 ![](scenarioC_delete.png?raw=true)
-&nbsp;&nbsp;&nbsp;&nbsp;Fron the graph, gRPC seems to perform better for all case until 4096 calls that gRPC cannot get all of request but for REST API, it can get all of it. So, the performance of gRPC in this scenario is better than REST API if the request is under the maximum concurrent calls that gRPC can be received.
+
+&nbsp;&nbsp;&nbsp;&nbsp;From the graph, gRPC seems to perform better for all case until 4096 calls that gRPC cannot get all of request but for REST API, it can get all of it. So, the performance of gRPC in this scenario is better than REST API if the request is under the maximum concurrent calls that gRPC can be received.
  
 **Benchmark & code for scenario C:**  
   
